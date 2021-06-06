@@ -6,6 +6,7 @@ import pl.fishingplace.fishingproject.domain.User;
 import pl.fishingplace.fishingproject.exceptions.NoSuchUserSerchingByIdException;
 import pl.fishingplace.fishingproject.exceptions.NoSuchUserSerchingByUserMailException;
 import pl.fishingplace.fishingproject.exceptions.NoSuchUserSerchingByUserNameException;
+import pl.fishingplace.fishingproject.exceptions.NoSuchUserSerchingByUserNickException;
 import pl.fishingplace.fishingproject.repository.UserRepository;
 
 @Service
@@ -21,5 +22,8 @@ public class UserService {
     }
     public User findByUserMail(String userMail){
         return repository.findByUserMail(userMail).orElseThrow(()-> new NoSuchUserSerchingByUserMailException(userMail));
+    }
+    public User findByUserNick(String userNick){
+        return repository.findByUserNick(userNick).orElseThrow(()->new NoSuchUserSerchingByUserNickException(userNick));
     }
 }
