@@ -6,22 +6,17 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Topic {
+public class Post {
     @Id
     @GeneratedValue
     private Long postId;
-    private String thread;
-    private String topicName;
+    private String content;
     @ManyToOne
-    private User author;
-    @OneToMany(mappedBy = "topic")
-    private List<Post> posts;
-
+    private Topic topic;
 }
