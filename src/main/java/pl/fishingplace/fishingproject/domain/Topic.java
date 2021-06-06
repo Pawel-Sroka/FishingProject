@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 @Data
@@ -19,5 +20,8 @@ public class Topic {
     @GeneratedValue
     private Long postId;
     private String thread;
+    private String topicName;
+    @ManyToOne
+    private User author;
 
 }
