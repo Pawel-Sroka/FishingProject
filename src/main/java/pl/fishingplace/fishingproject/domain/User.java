@@ -27,7 +27,7 @@ public class User {
     @NotEmpty
     @Email
     private String userMail;
-    private String userRole;
+    private Role userRole;
     private String userPassword;
     @UniqueElements
     private String userNick;

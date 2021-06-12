@@ -26,4 +26,7 @@ public class UserService {
     public User findByUserNick(String userNick){
         return repository.findByUserNick(userNick).orElseThrow(()->new NoSuchUserSerchingByUserNickException(userNick));
     }
+    public User createNewUser(User user){
+        return repository.save(user);
+    }
 }
